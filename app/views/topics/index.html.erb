@@ -1,0 +1,12 @@
+<h1>All of the topics for <%= @sub.name %></h1>
+<p>Find me in app/views/topics/index.html.erb</p>
+
+<%= link_to 'Create Topic', new_sub_topic_path(@sub) %>
+
+<ul>
+  <% @topics.each do |topic|%>
+  <li><%= link_to topic.name, [@sub, @topic]%></li>
+  <% end%>
+
+</ul>
+
