@@ -9,7 +9,7 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @topic = Topic.find(param[:id])
+    @topic = Topic.find(params[:id])
   end
 
   def new
@@ -21,7 +21,7 @@ class TopicsController < ApplicationController
   def create
     # @topic = Topic.new(topic_params)
     @topic = @sub.topics.new(topic_params)
-    if @top.save
+    if @topic.save
       redirect_to [@sub, @topic]
     else
       render :new

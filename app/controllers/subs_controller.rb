@@ -118,7 +118,7 @@ class SubsController < ApplicationController
     @sub = Sub.new(sub_params)
     # difined sub_params before you forget in private
     # add logic
-    if @sub.new
+    if @sub.save
       redirect_to subs_path
     else
       render :new
